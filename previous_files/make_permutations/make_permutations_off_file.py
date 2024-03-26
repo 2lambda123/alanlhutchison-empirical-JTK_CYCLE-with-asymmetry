@@ -6,7 +6,7 @@ Author: Alan L. Hutchison, alanlhutchison@uchicago.edu, Aaron Dinner Group, Univ
 import numpy as np
 import math
 import sys
-import random
+import secrets
 
 def main():
     # header is of length 24 with period 12, by 2
@@ -19,7 +19,7 @@ def main():
         g.write(header)
         for i in xrange(0,N_perms):
             alist=range(length)
-            random.shuffle(alist)
+            secrets.SystemRandom().shuffle(alist)
             g.write("length"+str(length)+"_"+str(i)+"\t"+"\t".join([str(x) for x in alist])+"\n")
 
 #def perm_given_index(alist, apermindex):
